@@ -8,14 +8,21 @@ import com.cydeo.bean_annotation.motherboardfactory.AsusMotherboard;
 import com.cydeo.bean_annotation.motherboardfactory.Motherboard;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class ComputerConfig { // defined a class annotation with @Configuration
 
 
+    @Bean(name = "sony")
+    public Monitor monitorSony() { // create a method  that return an Object  with @Bean annotation
+        return new SonyMonitor("25 inch Beats", "Sony", 25); // Monitor Object = new Monitor ==> Polymorphism
+    }
+
     @Bean
-    public Monitor monitorSony() { // create a method with @Bean annotation
-        return new SonyMonitor("25 inch Beats", "Acer", 25); // Monitor abc = new Monitor == Polymorphism
+    @Primary
+    public Monitor monitorAcer() { // create a method with @Bean annotation
+        return new SonyMonitor("23 inch Beats", "Acer", 23); // Monitor abc = new Monitor == Polymorphism
     }
 
     @Bean
