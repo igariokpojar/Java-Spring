@@ -5,12 +5,20 @@ import com.cydeo.proxy.CommentNotificationProxy;
 import com.cydeo.proxy.EmailCommentNotificationProxy;
 import com.cydeo.repository.CommentRepository;
 import com.cydeo.repository.DBCommentRepository;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CommentService { // business logic
 
-    private CommentRepository commentRepository; // for loosing couple we use Interface, implementation can change
+    private  final CommentRepository commentRepository; // for loosing couple we use Interface, implementation can change
 
-    private CommentNotificationProxy commentNotificationProxy;// for loosing couple we use Interface
+    private  final CommentNotificationProxy commentNotificationProxy;// for loosing couple we use Interface
+
+    public CommentService(CommentRepository commentRepository,@Qualifier("EMAIL") CommentNotificationProxy commentNotificationProxy) {
+        this.commentRepository = commentRepository;
+        this.commentNotificationProxy = commentNotificationProxy;
+    }
 
     public void publishComment(Comment comment){
 
