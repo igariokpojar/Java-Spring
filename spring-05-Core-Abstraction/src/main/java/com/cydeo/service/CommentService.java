@@ -6,7 +6,7 @@ import com.cydeo.proxy.EmailCommentNotificationProxy;
 import com.cydeo.repository.CommentRepository;
 import com.cydeo.repository.DBCommentRepository;
 
-public class CommentService {
+public class CommentService { // business logic
 
     private CommentRepository commentRepository; // for loosing couple we use Interface, implementation can change
 
@@ -16,7 +16,6 @@ public class CommentService {
 
         // save in the DB
         commentRepository.storeComment(comment);
-
 
         // Send email
         commentNotificationProxy.sendComment(comment);
