@@ -1,4 +1,4 @@
-package service;
+package com.cydeo.service;
 
 import com.cydeo.model.Comment;
 import com.cydeo.proxy.CommentNotificationProxy;

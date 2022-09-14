@@ -1,4 +1,4 @@
-package proxy;
+package com.cydeo.proxy;
 
 import com.cydeo.model.Comment;
 import org.springframework.beans.factory.annotation.Qualifier;
