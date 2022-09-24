@@ -12,9 +12,25 @@ public class HomeController {
 //        return "home.html";
 //    }
 
-    @RequestMapping({"/banana", "/orange"}) // if you do not specify, it will be added as default to initial page localhost:8080
+    @RequestMapping("/home")
     public String getHomePage(){
         return "home.html";
     }
+
+    @RequestMapping("/alex")
+    public String getHomePage2(){
+        return "home.html";
+    }
+
+    @RequestMapping // nothing and /
+    public String getHomePage3(){
+        return "home.html";
+    }
+
+    @RequestMapping ({"/apple","/orange"})
+    public String getHomePage4(){
+        return "home.html";
+    }
+
 
 }
