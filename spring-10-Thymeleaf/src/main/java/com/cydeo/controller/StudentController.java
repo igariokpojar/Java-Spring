@@ -10,22 +10,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/student")
 public class StudentController {
 
-    @RequestMapping("/register") // localhost:8080/student/mentor/register
-    public String register(Model model){
-        model.addAttribute("students", DataGenerator.createStudent());
+    @RequestMapping("/register") //localhost:8080/student/register
+    public String register(Model model){ // we add this annotation because we want one class to call each method
+
+        model.addAttribute("students", DataGenerator.createStudent());  // all the students describe in DG
 
         return "student/register";
     }
 
-    @RequestMapping("/drop") // localhost:8080/student/drop
-    public String drop(){
+    @RequestMapping("/welcome") //localhost:8080/student/welcome?name=Ozzy
+    public String welcome(){
 
-        return "student/register";
-    }
-
-    @RequestMapping("/welcome") // localhost:8080/student/welcome
-    public String welcome(@RequestParam String name){
-        System.out.println(name);
 
         return "student/welcome";
     }
