@@ -5,6 +5,7 @@ import com.cydeo.enums.Gender;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity // make this class table
 @Table(name = "students")// table name
@@ -24,7 +25,7 @@ public class Student {
     @Column(columnDefinition = "DATE")
     private LocalDate birthDate;
     @Column(columnDefinition = "TIME")
-    private LocalDate birthTime;
+    private LocalTime birthTime;
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime birthDateTime;
 
