@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class PaymentDetail {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // help us to create ID
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private BigDecimal merchantPayoutAmount;
@@ -23,8 +23,11 @@ public class PaymentDetail {
     @Column(columnDefinition = "DATE")
     private LocalDate payoutDate;
 
-    @OneToOne(mappedBy = "paymentDetail") // do not create  any foreign key inside this table
+    @OneToOne(mappedBy = "paymentDetail")
     private Payment payment;
+
+    @ManyToOne
+    private Merchant merchant;
 
     public PaymentDetail(BigDecimal merchantPayoutAmount, BigDecimal commissionAmount, LocalDate payoutDate) {
         this.merchantPayoutAmount = merchantPayoutAmount;
