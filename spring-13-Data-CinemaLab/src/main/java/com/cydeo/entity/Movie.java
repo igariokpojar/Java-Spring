@@ -5,12 +5,10 @@ import com.cydeo.enums.MovieType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
@@ -28,6 +26,11 @@ public class Movie extends BaseEntity {
     private MovieState state;
     private BigDecimal price;
 
+    @ManyToMany // Genre to Movie
+    @JoinTable(name = "movie_genre_rel", //// means we are modified the table that was created by SpringBoot
+            joinColumns = @JoinColumn(name = "movie_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+    private List<Genre> genreList; // many Genre As a List that s way we use List
 
 
 

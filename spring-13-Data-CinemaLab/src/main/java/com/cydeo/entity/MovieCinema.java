@@ -1,0 +1,23 @@
+package com.cydeo.entity;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.procedure.spi.ParameterRegistrationImplementor;
+
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+@Entity
+@Data
+@NoArgsConstructor
+public class MovieCinema extends BaseEntity{
+    @Column(columnDefinition = "TIMESTAMP")
+    private LocalDateTime localTime;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Movie movie;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Cinema cinema;
+}
