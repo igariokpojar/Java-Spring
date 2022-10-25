@@ -22,6 +22,6 @@ public class Account extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
-    @OneToOne(mappedBy = "account")
+    @OneToOne(mappedBy = "account") // to drop  foreign key on Account table
     private User user;
 }
