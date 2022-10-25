@@ -21,6 +21,7 @@ public class Movie extends BaseEntity {
     private Integer duration;
     @Column(columnDefinition = "text")
     private String summary;
+    @Enumerated(EnumType.STRING)
     private MovieType type;
     @Enumerated(EnumType.STRING)
     private MovieState state;
