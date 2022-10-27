@@ -22,7 +22,7 @@ public interface DepartmentRepository extends JpaRepository<Department,String> {
     List<Department>findByDivisionEndsWith(String pattern);
 
     //Display top 3 departments with division name includes 'Hea' without duplicates
-    List<Department>findDistinctTop3ByDivisionContaining(String pattern);
+    List<Department>findDistinctTop3ByDivisionContains(String pattern);
 
 
 }
