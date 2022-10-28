@@ -3,6 +3,7 @@ package com.cydeo.entity;
 import com.cydeo.enums.Gender;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.SQLInsert;
 
 import javax.persistence.*;
 import java.time.LocalDate;
