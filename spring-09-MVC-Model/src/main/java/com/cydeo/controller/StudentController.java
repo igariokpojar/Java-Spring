@@ -17,8 +17,9 @@ public class StudentController {
     @RequestMapping("/welcome")
     //Model is Interface tha is carrying data to view
     public String homePage(Model model){
-
+           // addAttribute is a method that carrying data to view
         model.addAttribute("name","Cydeo");
+        // for catching data to view we are using Template Engine 'THYMELEAF'
         model.addAttribute("course","MVC");
 
         String subject = "Spring Boot";

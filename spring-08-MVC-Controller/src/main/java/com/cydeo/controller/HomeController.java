@@ -12,9 +12,9 @@ public class HomeController {
 //        return "home.html";
 //    }
 
-    @RequestMapping("/home")
+    @RequestMapping("/home")// @RequestMapping is used to create our end points
     public String getHomePage(){
-        return "home.html";
+        return "home.html"; // Controllers job is to return view
     }
 
     @RequestMapping("/alex")
