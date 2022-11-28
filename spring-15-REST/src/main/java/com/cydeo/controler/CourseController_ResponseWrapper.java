@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/course/api/v3")
+@RequestMapping("/courses/api/v3")
 public class CourseController_ResponseWrapper {
     private final CourseService courseService;
 
