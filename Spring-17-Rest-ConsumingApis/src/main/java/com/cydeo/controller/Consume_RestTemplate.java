@@ -15,9 +15,10 @@ import java.util.Arrays;
 @RequestMapping("/cydeo")
 public class Consume_RestTemplate {
 
-    /* we learn how to consume API by using RestTemplate,
+    /*
+     we learn how to consume API by using RestTemplate,
     for the RestTemplate way we are using RestTemplate class we create a bean in the Runner class,
-     and inside this class we can use 3 different methods to consume: getForEntity, getForObject, exchange
+     and inside this class we used 3 different methods to consume: getForEntity, getForObject, exchange
 
 */
     private final RestTemplate restTemplate; // is coming with Spring Framework and we creat a @Bean in Runner Class
