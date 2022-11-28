@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController // Spring MVC @Controller+@ResponseBody
 @RequestMapping("/courses/api/v2")//v1 - v2 - v3 -> is coming from version
-public class CourseController_ResponseEntity { // If we create class and add annotation @RestController we create an EndPointClass
+public class CourseController_ResponseEntity { // If we create class and add annotation @RestController we are Developing an API
 
     private final CourseService courseService;
 

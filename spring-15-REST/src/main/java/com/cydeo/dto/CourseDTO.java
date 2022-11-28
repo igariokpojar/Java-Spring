@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CourseDTO {
+public class CourseDTO { // Jackson is taking this CourseDTO and is converted to Jason an is giving to you in API body
 
     @JsonIgnore
     private Long id;

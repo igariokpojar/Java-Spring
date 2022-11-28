@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController    //"/courses/api/v1" is for make this point unique v1  = version one
+// If we create class and add annotation @RestController we are Developing an API
 @RequestMapping("/courses/api/v1") //localhost:8080/courses -> GET on Postman
 public class CourseController {
 
