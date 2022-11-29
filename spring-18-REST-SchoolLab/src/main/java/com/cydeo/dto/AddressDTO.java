@@ -18,6 +18,12 @@ import lombok.Setter;
 @JsonInclude(JsonInclude.Include.NON_NULL) // do not include NULL fields.
 public class AddressDTO {
 
+    /*
+    The @JsonManagedReference and @JsonBackReference annotations can be used to create a JSON structure in a bidirectional way.
+     The @JsonManagedReference annotation is a forward reference that includes during the serialization process
+     whereas @JsonBackReference annotation is a backreference that omits during the serialization process.
+     */
+
     @JsonIgnore
     private Long id;
 
