@@ -14,11 +14,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_NULL)// do not include NULL fields.
 public class ClassDTO {
 
     @JsonIgnore
-    private Long id; // id is an auto increment field/ is unique in DB, so we are not going to send it
+    private Long id; // id is an auto increment field/ is unique in DB, so we are not going to send it.
 
     private String name;
     private Integer year;

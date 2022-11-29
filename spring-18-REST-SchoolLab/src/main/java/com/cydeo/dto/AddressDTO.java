@@ -15,7 +15,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonInclude(JsonInclude.Include.NON_NULL) // do not include NULL fields
+@JsonInclude(JsonInclude.Include.NON_NULL) // do not include NULL fields.
 public class AddressDTO {
 
     @JsonIgnore
