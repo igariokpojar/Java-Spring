@@ -10,7 +10,7 @@ import org.springframework.http.HttpStatus;
 @NoArgsConstructor
 
 // This customized class is going to be Converted by Jackson on Json in the API output
-public class ResponseWrapper {
+public class ResponseWrapper { // CUSTOMIZING THE JSON OUTPUT
  // every end point in our application is going to show all this attributes or fields
     private boolean success;
     private String message;
