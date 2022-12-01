@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
-@Configuration
-public class ComputerConfig { // defined a class annotation with @Configuration
+@Configuration // annotation from SpringFramework +  Maven dependency
+public class ComputerConfig { // defined a class annotation with @Configuration  means a source of Bean definition
 
 
     @Bean(name = "sony")
