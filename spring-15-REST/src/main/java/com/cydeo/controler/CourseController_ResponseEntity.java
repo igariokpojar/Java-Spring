@@ -21,7 +21,7 @@ public class CourseController_ResponseEntity { // If we create class and add ann
 
     @GetMapping   //ResponseEntity is Generic <accept something> use for modified something: status,header (key and value)
     public ResponseEntity<List<CourseDTO>> getAllCourses(){ // responsibility of this method is to return al, the courses of DTO
-        return ResponseEntity // generic class that is accepted something
+        return ResponseEntity // generic class that is accepted something, by using RespEntity we can manipulate with data as we can see below
                 .status(HttpStatus.ACCEPTED)
                 .header("Version","Cydeo.V2") // header are key and value (map)
                 .header("Operation","Get List")
@@ -55,7 +55,7 @@ public class CourseController_ResponseEntity { // If we create class and add ann
      @DeleteMapping("{id}")
     public ResponseEntity<Void>deleteCourseById(@PathVariable("id") Long courseId){
         courseService.deleteCourseById(courseId);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build(); // not return anything, Void or empty
     }
     @PostMapping("{id}")
     public ResponseEntity<Void>updateCourse(@PathVariable("id") Long courseId, @RequestBody CourseDTO course){

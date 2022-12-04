@@ -14,8 +14,17 @@ import reactor.core.publisher.Mono;
 
 @RestController
 public class Consume_WebClient {
+    /*
+    Reactive Programming ->  there are two terms
+             1.Synchronised -> (start and finishing one by one) you are sending one request to Api or someone sends some
+             request and you API is doing all the necessary things, and is waiting for second request.
+             2.Asynchronous -> APi is taking all the request and, it does wait for some request to be finished in the background,
+             and is sending what ever you need to DB for example
+             ,and if DB is creating in reactive way it creates many Objects in tha same time.
+*/
 
-    private WebClient webClient = WebClient.builder().baseUrl("http://localhost:8080").build();
+
+    private WebClient webClient = WebClient.builder().baseUrl("http://localhost:8080").build(); // this is an Object
 
     private final MovieCinemaService movieCinemaService;
     private final GenreService genreService;
@@ -27,7 +36,7 @@ public class Consume_WebClient {
 
     @GetMapping("/flux-movie-cinemas")
     public Flux<MovieCinemaDTO> readAllCinemaFlux(){
-
+        // Flux means multiple elements like List (many)!
         return Flux.fromIterable(movieCinemaService.findAll());
 
     }
@@ -48,6 +57,7 @@ public class Consume_WebClient {
 
     @PostMapping("/create-genre")
     public Mono<GenreDTO> createGenre(@RequestBody GenreDTO genre){
+        // Mono class-> if we want that API to return one Object
 
         GenreDTO createdGenre = genreService.save(genre);
 
@@ -68,13 +78,13 @@ public class Consume_WebClient {
 
     @GetMapping("/flux")
     public Flux<MovieCinemaDTO> readWithWebClient(){
-
+          // consuming reactive API
         return webClient
                 .get()
                 .uri("/flux-movie-cinemas")
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .retrieve()
-                .bodyToFlux(MovieCinemaDTO.class);
+                .bodyToFlux(MovieCinemaDTO.class); // multiple cinema Objects
 
     }
 
@@ -85,7 +95,7 @@ public class Consume_WebClient {
                 .get()
                 .uri("/mono-movie-cinema/{id}",id)
                 .retrieve()
-                .bodyToMono(MovieCinemaDTO.class);
+                .bodyToMono(MovieCinemaDTO.class); // return one Object
 
     }
 
