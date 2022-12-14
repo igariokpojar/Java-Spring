@@ -16,7 +16,7 @@ public class Cart {
     private Long id;
 
     @ManyToMany
-    //create relationship b/w cart and item tables
+    //create relationship b/w Cart and Item tables
     @JoinTable(name = "cart_item_rel",
             joinColumns = @JoinColumn(name = "c_id"),
             inverseJoinColumns = @JoinColumn(name = "i_id"))
