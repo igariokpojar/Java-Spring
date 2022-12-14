@@ -20,6 +20,7 @@ public class Cart {
     @JoinTable(name = "cart_item_rel",
             joinColumns = @JoinColumn(name = "c_id"),
             inverseJoinColumns = @JoinColumn(name = "i_id"))
+    //joinColumns-inverseJoinColumns-> we used this annotation to be able to manipulate the columns only
     private List<Item> itemList;
 
     }
